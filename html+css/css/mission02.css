@@ -1,0 +1,161 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: #eeeeee;
+}
+
+.navigation {
+    width: 100%;
+    height: 64px;
+    margin:0;
+    padding:0;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #222;
+    background-color: #333333;
+}
+
+.navigation h1 {
+    position: absolute;
+    left: 24px;
+    color: #ffffff;
+}
+
+.navigation ul {
+    position: absolute;
+    right: 24px;
+    top:16px;
+}
+
+.navigation ul li {
+    float: left;
+    margin-right: 32px;
+    color: #ffffff;
+
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation ul li a:hover {
+    color: cornflowerblue;
+}
+
+.container{
+    padding: 20px;
+}
+
+.firstpage, .secondpage, .imgpage, .lastpage, .lastbar{
+    background-color: #ffffff;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 4px #aaaaaa;
+}
+
+.firstpage h2, .secondpage h2, .lastpage h2{
+    color: #444444;
+}
+
+.firstpage span, .secondpage span, .lastpage span{
+    color: #888888;
+    font-size: 14px;
+}
+
+.firstpage p, .secondpage p{
+    text-indent: 2em;
+}
+
+.secondpage li{
+    list-style: none;
+}
+
+.img{
+    width: 240px;
+    height: 250px;
+    border: 1px solid #aaaaaa;
+    margin-bottom: 10px;
+
+}
+
+.img p{
+    text-align: center;
+    line-height: 0px;
+    margin-bottom: 0px;
+
+}
+
+.img img{
+    width: 200px;
+    height: 200px;
+    padding: 20px 10px 10px 20px;
+}
+
+.lastpage table{
+    border-collapse: collapse;
+}
+
+.lastpage td{
+    width: 300px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+}
+
+.lastpage thead{
+    background-color: #222222;
+    color: #ffffff;
+    text-align: left;
+}
+
+.lastpage tfoot{
+    background-color: #dddddd;
+}
+
+.lastbar h1 {
+    font-size: 24px;
+    padding: 10px 10px;
+    border-left: 4px solid #ccc;
+}
+
+.lastbar div{
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.lastbar p{
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-left: 154px;
+}
+
+.lastbar span {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+#subimtbutton{
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #006fff;
+    color: #ffffff;
+    font-size: 14px;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.foot{
+    width: 100%;
+    height: 64px;
+    border-bottom: 2px solid #222;
+    background-color: #333333;
+}
+
+.foot p{
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+}
