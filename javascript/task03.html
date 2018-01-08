@@ -22,13 +22,15 @@
     <li>第二名：北京空气质量：<b>90</b></li>
     <li>第三名：北京空气质量：<b>90</b></li>
      -->
-
   </ul>
 
   <button id="sort-btn">排序</button>
 
 <script type="text/javascript">
 
+var gul = document.getElementById("source");
+var gli = gul.getElementsByTagName('li');
+var data = new Array();
 /**
  * getData方法
  * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
@@ -38,7 +40,11 @@ function getData() {
   /*
   coding here
   */
-
+  for (var i = 0; i < gli.length; i++) {
+    var city = gli[i].innerText.slice(0,2);
+    var val = gli.lastChild.innerHTML;
+    data[i] = [city,val];
+  };
   /*
   data = [
     ["北京", 90],
@@ -46,18 +52,20 @@ function getData() {
     ……
   ]
   */
-
   return data;
-
 }
 
 /**
  * sortAqiData
- * 按空气质量对data进行从小到大的排序
+ * 按空气质量对data进行从大到小的排序
  * 返回一个排序后的数组
  */
 function sortAqiData(data) {
-
+  data.sort(function (x, y) {
+      return x[1]-y[1];
+  });
+  data.reverse();
+  return data;
 }
 
 /**
@@ -66,7 +74,13 @@ function sortAqiData(data) {
  * 格式见ul中的注释的部分
  */
 function render(data) {
-
+    var day = ["一","二","三","四","五","六","七"];
+    var gList = document.getElementById("resort");
+    for(var j = 0; j < data.length; j++){
+        var newList = document.createElement("li");
+        newList.innerHTML = "第"+day[j]+"名："+data[j][0]+"，得分："+"<b>"+data[j][1]+"</b>";
+        gList.appendChild(newList);
+    };
 }
 
 function btnHandle() {
