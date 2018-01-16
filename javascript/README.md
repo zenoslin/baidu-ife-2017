@@ -22,3 +22,9 @@
 * 接触一下JavaScript中的高级选择器
 * 学习JavaScript中的数组对象遍历、读写、排序等操作
 * 学习简单的字符串处理操作
+
+>任务四：基础JavaScript练习（一）
+任务目的
+* 学习与实践JavaScript的基本语法、语言特性
+* 初步了解JavaScript的事件是什么
+* 初步了解JavaScript中的DOM是什么
