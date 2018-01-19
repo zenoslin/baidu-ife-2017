@@ -45,13 +45,11 @@
         </div>
         <div class="show">
             <ul id="show_list">
-            <!--
-                <li>10</li>
-                <li>3</li>
-                <li>7</li>
-                <li>12</li>
-                <li>11</li>
-            -->
+                <li onclick="remove(this)">10</li>
+                <li onclick="remove(this)">3</li>
+                <li onclick="remove(this)">7</li>
+                <li onclick="remove(this)">12</li>
+                <li onclick="remove(this)">11</li>
             </ul>
         </div>
     </div>
@@ -92,7 +90,7 @@
         if (show_list_child.length === 0) {
             show_list.appendChild(li);
         }else{
-            show_list.insertBefore(li.show_list_child[0])
+            show_list.insertBefore(li, show_list_child[0]);
         }
         addClick(li);
     }
@@ -127,11 +125,18 @@
         }
     }
 
-    //为li添加点击事件
+
+
+    //为li添加点击删除事件
     function addClick(self){
-        self.onclick = function remove(){
-            show_list.removeChild(self);
+        self.onclick = function (){
+        self.parentNode.removeChild(self);
         }
+    }
+
+    //为已有元素添加点击删除事件
+    function remove(obj){
+        obj.parentNode.removeChild(obj);
     }
 
     //为button添加点击事件
