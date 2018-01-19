@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IFE JavaScript Task 03</title>
+    <title>IFE JavaScript Task 04</title>
 
     <style>
         ul{
@@ -17,35 +17,150 @@
             color: #ffffff;
             text-align: center;
         }
+        .intext{
+            float: left;
+        }
+        .inbtn{
+            float: left;
+            margin: 0px 20px 0px 4px;
+        }
+        .show{
+            margin-left: -40px;
+        }
     </style>
 
 </head>
 <body>
-    <div>
-        <div>
-            <input type="text">
+    <div class="input_form">
+        <div class="intext">
+            <input type="text" id="num">
         </div>
-        <div>
-            <input type="button" value="左侧入">
-            <input type="button" value="右侧入">
+        <div class="inbtn">
+            <button id="left_in">左侧入</button>
+            <button id="right_in">右侧入</button>
         </div>
-        <div>
-            <input type="button" value="左侧出">
-            <input type="button" value="右侧出">
+        <div class="outbtn">
+            <button id="left_out">左侧出</button>
+            <button id="right_out">右侧出</button>
         </div>
-        <div>
-            <ul>
+        <div class="show">
+            <ul id="show_list">
+            <!--
                 <li>10</li>
                 <li>3</li>
                 <li>7</li>
                 <li>12</li>
                 <li>11</li>
+            -->
             </ul>
         </div>
     </div>
 
 <script>
+    //先获取element
+    var num = document.getElementById('num'),
+        left_in = document.getElementById('left_in'),
+        right_in = document.getElementById('right_in'),
+        left_out = document.getElementById('left_out'),
+        right_out = document.getElementById('right_out'),
+        show_list = document.getElementById('show_list'),
+        show_list_child = show_list.getElementsByTagName('li'),
+        addNum = 0;
 
+    //判断输入是否为数字
+    function judgeNum() {
+        var number = num.value;
+        if (number === '') {
+            alert('请输入你要添加的!');
+        }else{
+            number = Number(number);
+            if (isNaN(number)) {
+                alert('请输入数字!');
+            }
+            else{
+                return number;
+            }
+        }
+    }
+
+    //左侧入
+    function leftIn(data){
+        //创建新节点
+        var li = document.createElement('li');
+        li.innerHTML = data;
+        //从左入
+        if (show_list_child.length === 0) {
+            show_list.appendChild(li);
+        }else{
+            show_list.insertBefore(li.show_list_child[0])
+        }
+        addClick(li);
+    }
+
+    //右侧入
+    function rightIn(data){
+        //创建新节点
+        var li = document.createElement('li');
+        li.innerHTML = data;
+        //从右入
+        show_list.appendChild(li);
+        addClick(li);
+    }
+
+
+    //左侧出
+    function leftOut(){
+        if (show_list_child.length === 0) {
+            alert('表中没有数字，请先输入数字');
+        }else{
+            show_list.removeChild(show_list_child[0]);
+        }
+    }
+
+    //右侧出
+    function rightOut(){
+        if (show_list_child.length === 0) {
+            alert('表中没有数字，请先输入数字');
+        } else {
+            var n = show_list_child.length;
+            show_list.removeChild(show_list_child[n-1]);
+        }
+    }
+
+    //为li添加点击事件
+    function addClick(self){
+        self.onclick = function remove(){
+            show_list.removeChild(self);
+        }
+    }
+
+    //为button添加点击事件
+    function btnClick(){
+        left_in.onclick = function (){
+            addNum = judgeNum();
+            if (addNum) {
+                leftIn(addNum);
+            }
+            num.value = '';
+        };
+
+        right_in.onclick = function (){
+            addNum = judgeNum();
+            if (addNum) {
+                rightIn(addNum);
+            }
+            num.value = '';
+        };
+
+        left_out.onclick = function (){
+            leftOut();
+        };
+
+        right_out.onclick = function (){
+            rightOut();
+        };
+    }
+    btnClick();
 </script>
 
 
