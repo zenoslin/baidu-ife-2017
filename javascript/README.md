@@ -2,8 +2,9 @@
 >IFE 历史精选课程，斌斌带你一起从0开始学习JavaScript
 * javascript
 
-任务一：零基础JavaScript编码（一）
->任务目的
+
+>任务一：零基础JavaScript编码（一）
+<p>任务目的</p>
 * JavaScript初体验
 * 初步明白JavaScript的简单基本语法，如变量、函数
 * 初步了解JavaScript的事件是什么
