@@ -15,3 +15,5 @@
 
 *  任务一：零基础JavaScript编码（一） javascript/task01.html
 *  任务二：零基础JavaScript编码（二） javascript/task02.html
+*  任务三：零基础JavaScript编码（三） javascript/task03.html
+*  任务四：基础JavaScript练习（一） javascript/task04.html
