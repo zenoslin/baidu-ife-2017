@@ -4,7 +4,7 @@
 
 
 >任务一：零基础JavaScript编码（一）
-<p>任务目的</p>
+任务目的
 * JavaScript初体验
 * 初步明白JavaScript的简单基本语法，如变量、函数
 * 初步了解JavaScript的事件是什么
