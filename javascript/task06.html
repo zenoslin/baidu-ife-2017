@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IFE JavaScript Task 04</title>
+    <title>IFE JavaScript Task 06</title>
 
     <style>
+        body{
+            text-align: center;
+        }
         ul{
             list-style: none;
             display: flex;
@@ -17,6 +20,14 @@
             color: #ffffff;
             text-align: center;
         }
+        .input_form{
+            display: inline-block;
+            margin:-top:50px;
+        }
+        .input_form label{
+            font-size: 18px;
+            *text-align: center;
+        }
         .intext{
             float: left;
         }
@@ -27,14 +38,42 @@
         .show{
             margin-left: -40px;
         }
+        #search_data {
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            width: 100px;
+            height: 28px;
+            font-size: 16px;
+            outline: none;
+            padding: 0 10px;
+            margin: 20px 0 0;
+            border: 1px solid #0099FF;
+        }
+        #search{
+            width: 60px;
+            height: 30px;
+            outline: none;
+            border: 0;
+            background-color: #0099FF;
+            font-size: 16px;
+            color:#ffffff;
+            margin: 20px 0 0;
+            padding: 0;
+            cursor:pointer;
+        }
+        #result{
+            font-size: 20px;
+            color:#000000;
+        }
     </style>
 
 </head>
 <body>
     <div class="input_form">
-        <div class="intext">
-            <input type="text" id="num">
-        </div>
+        <label for="all_data">请输入需要数据，不同数据请用符号分隔开:
+            <textarea name="" id="all_data" cols="20" rows="10"></textarea>
+        </label>
         <div class="inbtn">
             <button id="left_in">左侧入</button>
             <button id="right_in">右侧入</button>
@@ -42,6 +81,10 @@
         <div class="outbtn">
             <button id="left_out">左侧出</button>
             <button id="right_out">右侧出</button>
+        </div>
+        <div>
+            <input type="text" id="search_data">
+            <button id="search_btn">查询</button>
         </div>
         <div class="show">
             <ul id="show_list">
@@ -51,12 +94,15 @@
                 <li onclick="remove(this)">12</li>
                 <li onclick="remove(this)">11</li>
             </ul>
+            <div id="result">
+                <p></p>
+            </div>
         </div>
     </div>
 
 <script>
     //先获取element
-    var num = document.getElementById('num'),
+    var all_data = document.getElementById('all_data'),
         left_in = document.getElementById('left_in'),
         right_in = document.getElementById('right_in'),
         left_out = document.getElementById('left_out'),
